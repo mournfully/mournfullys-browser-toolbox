@@ -9,7 +9,7 @@ import { getStoredOptions, StorageKey, storeValue } from './storage';
 import { getUIDef } from './ui';
 import * as fs from 'fs';
 
-const BODY_HTML = fs.readFileSync('./src/browseraction.html', 'utf-8');
+const BODY_HTML = fs.readFileSync('./src/popup.html', 'utf-8');
 
 let mockStore = {};
 jest.mock('./load', () => ({

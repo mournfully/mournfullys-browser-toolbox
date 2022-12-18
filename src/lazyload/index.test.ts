@@ -1,4 +1,4 @@
-import { init } from '../lazyloading';
+import { init } from '../lazyload';
 
 const url = 'https://example.de';
 
