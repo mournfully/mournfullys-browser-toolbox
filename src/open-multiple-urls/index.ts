@@ -10,9 +10,7 @@ export const SAVE_URL_LIST_DEBOUNCE_TIME_MS = 100;
 export const UPDATE_TAB_COUNT_DEBOUNCE_TIME_MS = 50;
 
 const saveUrlList = async (ui: UIDef): Promise<void> => {
-  if (ui.preserveCheckbox.checked) {
     await storeValue<string>(StorageKey.urlList, ui.txtArea.value);
-  }
 };
 const debouncedSaveUrlList = debounce(
   saveUrlList,
@@ -46,10 +44,6 @@ export const init = async (): Promise<void> => {
   /* restore options */
   const options = await getStoredOptions();
   ui.txtArea.value = options.txt;
-  ui.lazyLoadCheckbox.checked = options.lazyload;
-  ui.randomCheckbox.checked = options.random;
-  ui.reverseCheckbox.checked = options.reverse;
-  ui.preserveCheckbox.checked = options.preserve;
 
   /* add text input events */
   ui.txtArea.addEventListener('input', () => {
@@ -62,40 +56,12 @@ export const init = async (): Promise<void> => {
     saveUrlList(ui);
     loadSites(
       ui.txtArea.value,
-      ui.lazyLoadCheckbox.checked,
-      ui.randomCheckbox.checked,
-      ui.reverseCheckbox.checked
     );
   });
   ui.extractButton.addEventListener('click', () => {
     ui.txtArea.value = extractURLs(ui.txtArea.value);
     saveUrlList(ui);
     updateTabCount(ui);
-  });
-
-  /* add options events */
-  ui.lazyLoadCheckbox.addEventListener('change', (event) =>
-    storeValue<boolean>(
-      StorageKey.lazyload,
-      (<HTMLInputElement>event.target).checked
-    )
-  );
-  ui.randomCheckbox.addEventListener('change', (event) =>
-    storeValue<boolean>(
-      StorageKey.random,
-      (<HTMLInputElement>event.target).checked
-    )
-  );
-  ui.reverseCheckbox.addEventListener('change', (event) =>
-    storeValue<boolean>(
-      StorageKey.reverse,
-      (<HTMLInputElement>event.target).checked
-    )
-  );
-  ui.preserveCheckbox.addEventListener('change', (event) => {
-    const isChecked = (<HTMLInputElement>event.target).checked;
-    storeValue<boolean>(StorageKey.preserve, isChecked);
-    storeValue<string>(StorageKey.urlList, isChecked ? ui.txtArea.value : '');
   });
 
   /* update tabcount */
