@@ -2,6 +2,8 @@ body {
   padding: 5px;
   font-family: sans-serif;
   font-size: 13px;
+  background-color: #202124;
+  color: #ffffff;
 }
 
 main {
@@ -28,11 +30,15 @@ textarea {
   overflow: auto;
 
   outline: none;
+  background-color: #292a2d;
+  color: #ffffff;
 }
 
 button {
   padding: 4px 8px;
   cursor: pointer;
+  background-color: #292a2d;
+  color: #ffffff;
 }
 
 #tabcount {
