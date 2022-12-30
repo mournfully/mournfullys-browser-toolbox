@@ -89,7 +89,8 @@ describe('test browser action', () => {
     await init();
 
     const uiDef = getUIDef();
-
+    //@audit-issue
+    // jest unit tests fail here, but extension's localStorage seems to be fine 
     uiDef.txtArea.value = 'foobar';
     uiDef.txtArea.dispatchEvent(new Event('input')); // issue could be with export
     expect((await getStoredOptions()).txt).toBe('foobar'); // or with import

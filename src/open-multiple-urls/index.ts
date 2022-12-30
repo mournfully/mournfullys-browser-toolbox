@@ -4,13 +4,17 @@ import { getStoredOptions, StorageKey, storeValue } from './storage';
 import { getUIDef, UIDef } from './ui';
 import { debounce } from 'ts-debounce';
 
-export {};
+export { };
 
 export const SAVE_URL_LIST_DEBOUNCE_TIME_MS = 100;
 export const UPDATE_TAB_COUNT_DEBOUNCE_TIME_MS = 50;
 
 const saveUrlList = async (ui: UIDef): Promise<void> => {
-  await storeValue<string>(StorageKey.urlList, ui.txtArea.value);
+  if (ui.txtArea) {
+    // ^ will evaluate to true if value is not: 
+    //  null, undefined, NaN, empty string (""), 0, false,  
+    await storeValue<string>(StorageKey.urlList, ui.txtArea.value);
+  }
 };
 const debouncedSaveUrlList = debounce(
   saveUrlList,
