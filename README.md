@@ -1,16 +1,19 @@
 # monolithic-chrome-extension
-When redoing CopyCat make sure to add these schemes
+[OpenMultipleURLs](https://github.com/htrinter/Open-Multiple-URLs) dev environment was rather interesting. So, I've been slowly looking at their configs and replicating pieces of it here.
+
+When redoing CopyCat - I want these schemes
 - Copy Markdown
-- Copy in Two Lines
-with these options
+- Copy URLs
+With these options
 - Copy
 - Copy all tabs
-- Copy tabs to the right
+- *Copy tabs to the right?*
 - *Copy all tabs in group?*
 
+
 ```shell
-docker-compose build
-docker-compose up -d
+docker-compose up
+docker-compose up --force
 ```
 
-[docker compose build | Docker Documentation](https://docs.docker.com/engine/reference/commandline/compose_build/)
+By the way, `node_modules` and `.parcel-cache` are meant to look empty because their contents are inside a docker volume.
