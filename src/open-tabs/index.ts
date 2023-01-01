@@ -1,7 +1,7 @@
 import { extractURLs } from './extract';
 import { loadSites, URL_LINE_SPLIT_REGEX } from './load';
-import { getStoredOptions, StorageKey, storeValue } from './storage';
-import { getUIDef, UIDef } from './ui';
+import { getStoredOptions, StorageKey, storeValue } from '../common/storage';
+import { getUIDef, UIDef } from '../common/ui';
 import { debounce } from 'ts-debounce';
 
 export { };
@@ -58,9 +58,7 @@ export const init = async (): Promise<void> => {
   /* add button events */
   ui.openButton.addEventListener('click', () => {
     saveUrlList(ui);
-    loadSites(
-      ui.txtArea.value,
-    );
+    loadSites(ui.txtArea.value);
   });
   ui.extractButton.addEventListener('click', () => {
     ui.txtArea.value = extractURLs(ui.txtArea.value);

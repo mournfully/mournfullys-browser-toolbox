@@ -5,8 +5,8 @@ import {
 } from '.';
 import { extractURLs } from './extract';
 import { loadSites } from './load';
-import { getStoredOptions, StorageKey, storeValue } from './storage';
-import { getUIDef } from './ui';
+import { getStoredOptions, StorageKey, storeValue } from '../common/storage';
+import { getUIDef } from '../common/ui';
 import * as fs from 'fs';
 
 const BODY_HTML = fs.readFileSync('./src/popup.html', 'utf-8');

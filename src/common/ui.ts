@@ -5,6 +5,7 @@ export interface UIDef {
   tabCount: HTMLSpanElement;
   tabCountNumber: HTMLSpanElement;
   tabCountTabLabel: HTMLSpanElement;
+  copyForm: HTMLFormElement;
 }
 
 export function getUIDef(): UIDef {
@@ -13,11 +14,9 @@ export function getUIDef(): UIDef {
     openButton: document.getElementById('open') as HTMLInputElement,
     extractButton: document.getElementById('extract') as HTMLInputElement,
     tabCount: document.getElementById('tabcount') as HTMLSpanElement,
-    tabCountNumber: document.getElementById(
-      'tabcount-number'
-    ) as HTMLSpanElement,
-    tabCountTabLabel: document.getElementById(
-      'tabcount-tab-label'
-    ) as HTMLSpanElement,
+    tabCountNumber: document.getElementById('tabcount-number') as HTMLSpanElement,
+    tabCountTabLabel: document.getElementById('tabcount-tab-label') as HTMLSpanElement,
+    copyForm: document.getElementById('copyForm') as HTMLFormElement,
   };
 }
+
