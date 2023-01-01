@@ -3,7 +3,7 @@
   "version": "1.2.0",
   "description": "comprehensive tab management",
   "scripts": {
-    "start": "npm install && npm run build",
+    "start": "npm install && npm run clean && parcel build src/manifest.json && tail -f /dev/null",
     "build": "npm run clean && parcel build src/manifest.json",
     "watch": "npm run clean && parcel watch src/manifest.json --no-hmr",
     "test": "npx jest --collect-coverage",
@@ -14,21 +14,22 @@
   "author": "mournfully",
   "license": "MIT",
   "devDependencies": {
-    "@types/jest": "^29.2.4",
-    "jest-environment-jsdom": "^29.3.1",
-    "jest": "^29.3.1",
-    "ts-jest": "^29.0.3",
-    "typescript": "^4.9.4",
+    "parcel": "^2.8.2",
+    "@parcel/config-webextension": "^2.8.2",
     "@types/webextension-polyfill": "^0.9.2",
-    "@typescript-eslint/eslint-plugin": "^5.47.1",
+    "webextension-polyfill": "^0.10.0",
     "@typescript-eslint/parser": "^5.47.1",
-    "eslint": "^8.30.0"
+    "@typescript-eslint/eslint-plugin": "^5.47.1",
+    "eslint": "^8.30.0",
+    "@types/jest": "^29.2.4",
+    "jest": "^29.3.1",
+    "jest-environment-jsdom": "^29.3.1",
+    "ts-jest": "^29.0.3",
+    "typescript": "^4.9.4"
   },
   "dependencies": {
+    "clipboard": "^2.0.11",
     "rimraf": "^3.0.2",
-    "ts-debounce": "^4.0.0",
-    "webextension-polyfill": "^0.10.0",
-    "@parcel/config-webextension": "^2.8.2",
-    "parcel": "^2.8.2"
+    "ts-debounce": "^4.0.0"
   }
 }
