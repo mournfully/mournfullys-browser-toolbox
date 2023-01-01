@@ -2,21 +2,18 @@ body {
   padding: 5px;
   font-family: sans-serif;
   font-size: 13px;
-  background-color: #202124;
+
+  height: 600px;
+  background-color: #161c26;
   color: #ffffff;
 }
 
 main {
-  width: 600px;
+  width: 375px;
 }
 
 section {
   margin: 0 0 10px 0;
-}
-
-label[for='urls'] {
-  display: block;
-  margin-bottom: 4px;
 }
 
 textarea {
@@ -29,51 +26,6 @@ textarea {
   white-space: pre;
   overflow: auto;
 
-  outline: none;
-  background-color: #292a2d;
+  background-color: #161c26;
   color: #ffffff;
-}
-
-button {
-  padding: 4px 8px;
-  cursor: pointer;
-  background-color: #292a2d;
-  color: #ffffff;
-}
-
-#tabcount {
-  padding-left: 5px;
-}
-
-#tabcount abbr {
-  cursor: default;
-  text-decoration: none;
-  border-bottom: none;
-}
-
-#tabcount abbr span {
-  border-bottom: 1px dotted #000;
-}
-
-hr {
-  margin: 20px 0 15px 0;
-  border: none;
-  border-top: 1px solid #c0c0c0;
-}
-
-label.checkbox {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-input[type='checkbox'] {
-  flex: none;
-  margin-right: 5px;
-}
-
-#extract {
-  float: right;
 }
