@@ -20,9 +20,34 @@
                 </abbr> 
             </span>
         </section>
-        <hr>
+        <script type="module" src="./open-tabs/index.ts"></script>
+
+        <section>
+            <label>Copy list of URLs:</label>
+        </section>
+        <form id="copyForm">
+              <div>
+                <input type="radio" id="markdown" name="format" value="markdown"/>
+                <label for="markdown">Copy as markdown</label>
+                <input type="radio" id="url" name="format" value="url"/>
+                <label for="url">Copy urls</label>
+                <input type="radio" id="title" name="format" value="title"/>
+                <label for="title">Copy titles</label>
+                <br>
+                <input type="radio" id="current" name="action" value="current"/>
+                <label for="current">Copy tab</label>
+                <input type="radio" id="all" name="action" value="all"/>
+                <label for="all">Copy all tabs</label>
+                <input type="radio" id="rightward" name="action" value="rightward"/>
+                <label for="rightward">Copy tabs to the right</label>
+              </div>
+              <div>
+                <button type="submit">Copy</button>
+              </div>
+        </form>
+        <script type="module" src="./copy-tabs/index.ts"></script>
+
     </main>
-    <script type="module" src="./open-multiple-urls/index.ts"></script>
 </body>
 
 </html>
