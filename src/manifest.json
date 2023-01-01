@@ -1,8 +1,8 @@
 {
-  "name": "Tab Manager",
+  "name": "Mournfully's Extension",
   "version": "1.1",
   "manifest_version": 3,
-  "description": "All in one, Tab management",
+  "description": "An amalgamation of a couple distinct chrome extensions under one unified interface",
   "homepage_url": "https://github.com/mournfully",
   "icons": {
     "16": "static/icon16.png",
@@ -13,5 +13,9 @@
     "default_icon": "static/icon16.png",
     "default_popup": "popup.html"
   },
-  "permissions": ["storage"]
+  "permissions": [
+    "storage",
+    "tabs",
+    "clipboardWrite"
+  ]
 }

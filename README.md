@@ -7,9 +7,7 @@ When redoing CopyCat - I want these schemes
 With these options
 - Copy
 - Copy all tabs
-- *Copy tabs to the right?*
-- *Copy all tabs in group?*
-
+- Copy tabs to the right
 
 ```shell
 docker-compose up
