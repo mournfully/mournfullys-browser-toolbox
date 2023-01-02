@@ -13,7 +13,8 @@
         </section>
         <section>
             <button id="extract" tabindex="6">Extract URLs from text</button>
-            <button id="open" tabindex="2"><strong>Open URLs</strong></button>
+            <button id="open" tabindex="2">Open URLs</button>
+            <br>
             <span id="tabcount"> 
                 <abbr title="Opening too many tabs at once may lead to long wait times or crash your browser.">
                     &#9432; <span>will open <span id="tabcount-number">0</span> new <span id="tabcount-tab-label">tabs</span></span> 
@@ -26,7 +27,6 @@
             <label>Copy list of URLs:</label>
         </section>
         <form id="copyForm">
-              <div>
                 <input type="radio" id="markdown" name="format" value="markdown"/>
                 <label for="markdown">Copy as markdown</label>
                 <input type="radio" id="url" name="format" value="url"/>
@@ -34,17 +34,14 @@
                 <input type="radio" id="title" name="format" value="title"/>
                 <label for="title">Copy titles</label>
                 <br>
-                <input type="radio" id="current" name="action" value="current"/>
-                <label for="current">Copy tab</label>
-                <input type="radio" id="all" name="action" value="all"/>
+                <input type="radio" id="active" name="scope" value="active"/>
+                <label for="active">Copy tab</label>
+                <input type="radio" id="all" name="scope" value="all"/>
                 <label for="all">Copy all tabs</label>
-                <input type="radio" id="rightward" name="action" value="rightward"/>
+                <input type="radio" id="rightward" name="scope" value="rightward"/>
                 <label for="rightward">Copy tabs to the right</label>
-              </div>
-              <div>
-                <button type="submit">Copy</button>
-              </div>
         </form>
+        <button id="copy" tabindex="6">Copy</button>
         <script type="module" src="./copy-tabs/index.ts"></script>
 
     </main>
