@@ -35,7 +35,7 @@ const updateTabCount = (ui: UIDef) => {
 
   ui.tabCountNumber.textContent = tabCount;
   ui.tabCountTabLabel.textContent = tabCount === '1' ? 'tab' : 'tabs';
-  ui.tabCount.style.visibility = tabCount === '0' ? 'hidden' : 'visible';
+  ui.tabCount.style.visibility = tabCount === '0' ? 'visible' : 'visible';
 };
 const debouncedUpdateTabCount = debounce(
   updateTabCount,
