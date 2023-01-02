@@ -12,6 +12,9 @@ With these options
 ```shell
 docker-compose up
 docker-compose up --force
+
+# see: https://www.digitalocean.com/community/tutorials/how-to-use-docker-exec-to-run-commands-in-a-docker-container
+docker exec -it mournfuly-extension sh
 ```
 
 By the way, `node_modules` and `.parcel-cache` are meant to look empty because their contents are inside a docker volume.
