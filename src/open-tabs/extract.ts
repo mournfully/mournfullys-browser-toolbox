@@ -4,6 +4,7 @@ export {};
  * Extract URLs from text
  * @param text Text
  */
+
 export function extractURLs(text: string): string {
   let urls = '';
   let urlmatcharr;

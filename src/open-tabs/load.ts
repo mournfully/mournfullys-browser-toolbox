@@ -1,15 +1,13 @@
 import browser from 'webextension-polyfill';
 
 export const URL_LINE_SPLIT_REGEX = /\r\n?|\n/g;
+
 /**
  * Loads sites in new background tabs
  * @param text Text containing one URL per line
- * @param lazyloading Lazy-load tabs
- * @param random Open tabs in random order
  */
-export function loadSites(
-  text: string,
-): void {
+
+export function loadSites(text: string): void {
   const urlschemes = ['http', 'https', 'file', 'view-source'];
   let urls = text.split(URL_LINE_SPLIT_REGEX);
 

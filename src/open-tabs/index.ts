@@ -9,6 +9,11 @@ export { };
 export const SAVE_URL_LIST_DEBOUNCE_TIME_MS = 100;
 export const UPDATE_TAB_COUNT_DEBOUNCE_TIME_MS = 50;
 
+/**
+ * reference: https://github.com/htrinter/Open-Multiple-URLs
+ * permissions: storage
+ */
+
 const saveUrlList = async (ui: UIDef): Promise<void> => {
   if (ui.txtArea) {
     // ^ will evaluate to true if value is not: 
