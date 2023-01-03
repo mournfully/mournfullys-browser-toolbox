@@ -8,12 +8,15 @@ When redoing [CopyCat](https://github.com/kiichi/QuickCopyTitleAndURL) - I want 
 - Copy Markdown
 - Copy URLs
 - Copy Titles
+
 With these options:
 - Copy
 - Copy all tabs
 - Copy tabs to the right
 
 I want [enchanced-github](https://github.com/softvar/enhanced-github)'s ability to show each repo's size in the sidebar. Besides, I really hate how slow it can be and how it shows each files size...
+
+And there was this browser some youtuber was shilling to us, and they kept going on and on about how their browser would automatically pause their music when a video was being played and would resume afterwards. I wonder if I could have that from my chrome extension.
 
 ---
 
