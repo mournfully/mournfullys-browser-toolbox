@@ -15,7 +15,7 @@ async function setupOptions(dataFormat, dataAction) {
 	if (dataAction == 'rightward') {
 		const currentTab = await getCurrentTab();
 		// see: https://developer.chrome.com/docs/extensions/reference/tabs/#type-Tab
-		tabStart = currentTab.index + 1 // all tabs to it's right, but not itself
+		tabStart = currentTab.index
 	}
 
 	// see: https://www.w3schools.com/js/tryit.asp?filename=tryjs_object_object
