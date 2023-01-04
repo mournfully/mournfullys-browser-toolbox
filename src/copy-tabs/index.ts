@@ -9,9 +9,9 @@ export const SAVE_URL_LIST_DEBOUNCE_TIME_MS = 100;
 export const UPDATE_TAB_COUNT_DEBOUNCE_TIME_MS = 50;
 
 /**
- * reference: https://github.com/kiichi/QuickCopyTitleAndURL
- * permissions: storage, tabs, clipboardWrite
- * debug with: chrome.storage.local.get(console.log)
+ * see: https://github.com/kiichi/QuickCopyTitleAndURL
+ * perms: storage, tabs, clipboardWrite
+ * debug: chrome.storage.local.get(console.log)
  */
 
 const saveOptions = async (name: string, value: string): Promise<void> => {

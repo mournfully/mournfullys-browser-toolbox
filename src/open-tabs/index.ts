@@ -10,8 +10,8 @@ export const SAVE_URL_LIST_DEBOUNCE_TIME_MS = 100;
 export const UPDATE_TAB_COUNT_DEBOUNCE_TIME_MS = 50;
 
 /**
- * reference: https://github.com/htrinter/Open-Multiple-URLs
- * permissions: storage
+ * see: https://github.com/htrinter/Open-Multiple-URLs
+ * perms: storage
  */
 
 const saveUrlList = async (ui: UIDef): Promise<void> => {

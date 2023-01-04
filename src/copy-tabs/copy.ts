@@ -75,7 +75,7 @@ function isImage(url) {
 // see: https://github.com/zenorocha/clipboard.js/blob/master/demo/target-programmatic-copy.html
 function copyToClipboard(input: string) {
 	const textCopied = ClipboardJS.copy(input);
-	console.log('copied!\n' + textCopied);
+	//! console.log('copied!\n' + textCopied);
 }
 
 // see: https://developer.chrome.com/docs/extensions/reference/tabs/#get-the-current-tab
