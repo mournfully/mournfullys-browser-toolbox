@@ -1,0 +1,32 @@
+{
+  "name": "Mournfully's Extension",
+  "version": "1.2.2",
+  "manifest_version": 3,
+  "description": "An amalgamation of a couple distinct chrome extensions under one unified interface",
+  "homepage_url": "https://github.com/mournfully",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "storage",
+    "tabs",
+    "clipboardWrite",
+    "declarativeContent"
+  ],
+  "action": {
+    "default_icon": "icons/icon16.png",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*", "https://music.youtube.com/*"],
+      "js": ["./yt-nonstop/autoconfirm.ts"],
+      "run_at": "document_end"
+    }
+  ],
+  "background": {
+    "service_worker": "./yt-nonstop/background.ts"
+  }
+}
