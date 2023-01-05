@@ -43,3 +43,27 @@ textarea {
 #tabcount abbr span {
   border-bottom: 1px dotted #ffffff;
 }
+
+#url-section {
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+}
+
+/* https://stackoverflow.com/questions/18961918/css-fill-remaining-width */
+#url-input {
+  flex-grow: 1;
+
+  border: solid;
+  border-color: #767676;
+  border-width: 1px;
+
+  font-family: monospace;
+  background-color: #161c26;
+  color: #ffffff;
+}
+
+#url-button {
+  margin-left: 4px;
+  display: flex;
+}

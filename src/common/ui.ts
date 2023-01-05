@@ -8,6 +8,8 @@ export interface UIDef {
   copyForm: HTMLFormElement;
   copyButton: HTMLInputElement;
   reloadButton: HTMLInputElement;
+  urlInputText: HTMLInputElement;
+  urlInputButton: HTMLInputElement;
 }
 
 export function getUIDef(): UIDef {
@@ -21,6 +23,8 @@ export function getUIDef(): UIDef {
     copyForm: document.getElementById('copyForm') as HTMLFormElement,
     copyButton: document.getElementById('copy') as HTMLInputElement,
     reloadButton: document.getElementById('reload') as HTMLInputElement,
+    urlInputText: document.getElementById('url-input') as HTMLInputElement,
+    urlInputButton: document.getElementById('url-button') as HTMLInputElement,
   };
 }
 
