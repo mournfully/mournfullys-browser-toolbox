@@ -4,6 +4,7 @@ services:
   container:
     image: node:current-alpine
     container_name: mournfullys-chrome-extension
+    network_mode: host
     working_dir: /usr/src/app
     environment:
       # - NODE_ENV=production
