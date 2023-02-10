@@ -1,8 +1,13 @@
-# monolithic-chrome-extension
+# tab-helper-extension
 
 > **NOTE**: this extension is not meant for the chrome webstore as it violates their [Extensions quality guidelines](https://developer.chrome.com/docs/extensions/mv3/single_purpose/), because this extension does not have a narrow focus area or purpose.
 
-<img src="./.github/example.png" width="300"/>
+<!-- How can one display images side by side in a GitHub README.md? - Stack Overflow https://stackoverflow.com/a/65948716 -->
+<p float="center">
+    <img src="./.github/empty.png" width="45%"/>
+    &nbsp; &nbsp; &nbsp; &nbsp;
+    <img src="./.github/filled.png" width="45%"/>
+</p>
 
 ### thoughts
 *There's a few `chrome` api calls, that I haven't managed to replace with `browser` from `webextension-polyfill`. And, maybe a status indicator for how many tabs will be copied - like what open-tabs has.*
