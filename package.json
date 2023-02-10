@@ -3,7 +3,7 @@
   "version": "1.2.0",
   "description": "comprehensive tab management",
   "scripts": {
-    "start": "npm install && npm run clean && parcel build src/manifest.json && tail -f /dev/null",
+    "start": "npm install && npm run clean && parcel build src/manifest.json",
     "build": "npm run clean && parcel build src/manifest.json",
     "watch": "npm run clean && parcel watch src/manifest.json --no-hmr",
     "test": "npx jest --collect-coverage",
