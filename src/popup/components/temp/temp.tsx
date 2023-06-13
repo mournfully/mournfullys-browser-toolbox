@@ -1,8 +1,9 @@
 import styles from './temp.module.scss'
 
-const container = () => {
+const app = () => {
   return (
-    <div class={styles.main}>
+    <div class="w-375 h-600">
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat assumenda unde exercitationem deserunt cum iusto quo delectus perferendis. A incidunt exercitationem quam alias accusantium sapiente? Atque illo enim accusantium consequuntur?</p>
       <section>
         <label for="urls">Open a list of urls / Extract urls from text:</label>
         <textarea id="urls" wrap="soft" tabindex="1"></textarea>
@@ -43,4 +44,4 @@ const container = () => {
   )
 }
 
-export default container
+export default app

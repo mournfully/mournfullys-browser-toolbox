@@ -1,0 +1,4 @@
+/* https://www.codeconcisely.com/posts/tailwind-css-unknown-at-rules/#installing-tailwind-css-intellisense-plugin */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
