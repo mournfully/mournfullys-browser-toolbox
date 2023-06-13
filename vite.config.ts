@@ -8,5 +8,10 @@ export default defineConfig({
   plugins: [
     solidPlugin(),
     crx({ manifest }),
-  ]
+  ],
+  // https://github.com/crxjs/chrome-extension-tools/issues/648
+  server: { 
+    port: 3000,
+    hmr: { port: 3000 }, 
+  },
 })
