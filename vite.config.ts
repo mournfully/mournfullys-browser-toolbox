@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import solidPlugin from 'vite-plugin-solid'
 import { crx } from '@crxjs/vite-plugin'
-import manifest from './manifest.json'
+import manifest from './src/manifest.json'
 
 export default defineConfig({
   plugins: [

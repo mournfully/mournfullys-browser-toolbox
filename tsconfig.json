@@ -1,10 +1,17 @@
 {
   "compilerOptions": {
-    "target": "es2016",
-    "moduleResolution":"node",
+    "strict": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "sourceMap": true,
     "jsx": "preserve",
-    "jsxImportSource": "solid-js"
-  }
+    "jsxImportSource": "solid-js",
+    "types": ["vite/client"],
+    "noEmit": true,
+    "isolatedModules": true
+  },
+  "include": ["src/", "src/*.d.ts"],
+  "exclude": ["node_modules", "dist", "public"]
 }
