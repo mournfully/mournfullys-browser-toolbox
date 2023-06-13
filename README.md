@@ -4,9 +4,9 @@
 
 <!-- How can one display images side by side in a GitHub README.md? - Stack Overflow https://stackoverflow.com/a/65948716 -->
 <p float="center">
-    <img src="./public/empty.png" width="45%"/>
+    <img src="./.github/empty.png" width="45%"/>
     &nbsp; &nbsp; &nbsp; &nbsp;
-    <img src="./public/filled.png" width="45%"/>
+    <img src="./.github/filled.png" width="45%"/>
 </p>
 
 ### thoughts
