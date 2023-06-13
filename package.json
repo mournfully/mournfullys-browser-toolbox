@@ -5,7 +5,7 @@
   "scripts": {
     "start": "npm install && npm run clean && parcel build src/manifest.json",
     "build": "npm run clean && parcel build src/manifest.json",
-    "watch": "npm run clean && parcel watch src/manifest.json --no-hmr",
+    "dev": "npm run clean && parcel watch src/manifest.json --no-hmr",
     "test": "npx jest --collect-coverage",
     "lint": "npx eslint . --ext .ts,.js",
     "clean": "rimraf dist"
