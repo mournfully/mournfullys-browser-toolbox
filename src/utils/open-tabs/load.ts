@@ -9,7 +9,7 @@ export const URL_LINE_SPLIT_REGEX = /\r\n?|\n/g;
 
 export function loadSites(text: string): void {
   const urlschemes = ['http', 'https', 'file', 'view-source'];
-  let urls = text.split(URL_LINE_SPLIT_REGEX);
+  const urls = text.split(URL_LINE_SPLIT_REGEX);
 
   for (let i = 0; i < urls.length; i++) {
     let theurl = urls[i].trim();
