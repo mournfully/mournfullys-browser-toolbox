@@ -5,12 +5,12 @@
   "description": "An amalgamation of a couple distinct chrome extensions under one unified interface",
   "homepage_url": "https://github.com/mournfully",
   "icons": {
-    "16": "icons/icon16.png",
-    "48": "icons/icon48.png",
-    "128": "icons/icon128.png"
+    "16": "public/icon16.png",
+    "48": "public/icon48.png",
+    "128": "public/icon128.png"
   },
   "action": {
-    "default_icon": "icons/icon16.png",
+    "default_icon": "public/icon16.png",
     "default_popup": "ui/popup/popup.html"
   },
   "permissions": [
