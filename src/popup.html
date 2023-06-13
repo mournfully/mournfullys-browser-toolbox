@@ -26,19 +26,21 @@
         <hr>
 
         <section>
-            <label for="copyForm">Copy titles and urls into clipboard:</label>
-            <form id="copyForm">
-                <input type="radio" name="format" id="markdown"/><label for="markdown">Copy as markdown</label>
-                <input type="radio" name="format" id="url"/><label for="url">Copy urls</label>
-                <input type="radio" name="format" id="title"/><label for="title">Copy titles</label>
+            <label for="copy">copy titles and urls into clipboard</label>
+            <form id="copy">
+                <input type="radio" name="format" id="0"/><label for="0">[title][url]</label>
+                <input type="radio" name="format" id="1"/><label for="1">title - url</label>
+                <input type="radio" name="format" id="2"/><label for="2">title</label>
+                <input type="radio" name="format" id="3"/><label for="3">url</label>
                 <br>
-                <input type="radio" name="scope" id="single"/><label for="single">Copy tab</label>
-                <input type="radio" name="scope" id="all"/><label for="all">Copy all tabs</label>
-                <input type="radio" name="scope" id="rightward"/><label for="rightward">Copy tabs to the right</label>
+                <input type="radio" name="scope" id="10"/><label for="10">current</label>
+                <input type="radio" name="scope" id="11"/><label for="11">all</label>
+                <input type="radio" name="scope" id="12"/><label for="12">rightwards</label>
+                <input type="radio" name="scope" id="13"/><label for="13">leftwards</label>
             </form>
         </section>
         <section>
-            <button id="copy" tabindex="6">Copy</button>
+            <button id="copy" tabindex="6">copy</button>
         </section>
         <script type="module" src="./copy-tabs/index.ts"></script>
         <hr>
