@@ -17,9 +17,15 @@ async function setupOptions(dataFormat, dataAction) {
 		// see: https://developer.chrome.com/docs/extensions/reference/tabs/#type-Tab
 		tabStart = currentTab.index
 	}
+	let tabEnd;
+	if (dataAction == 'leftward') {
+		const currentTab = await getCurrentTab();
+		// see: https://developer.chrome.com/docs/extensions/reference/tabs/#type-Tab
+		tabEnd = currentTab.index + 1;
+	}
 
 	// see: https://www.w3schools.com/js/tryit.asp?filename=tryjs_object_object
-	formatInput(dataFormat, options, tabStart);
+	formatInput(dataFormat, options, tabStart, tabEnd);
 }
 
 /**
@@ -27,10 +33,14 @@ async function setupOptions(dataFormat, dataAction) {
  * @param dataFormat - type of data format to copy e.g. "md", "title", or "url"
  * @param dataAction - action when it copies: "current", "all", or "all to the right"
  */
-function formatInput(dataFormat, options, tabStart) {
+function formatInput(dataFormat, options, tabStart, tabEnd?) {
 	let output = '';
 	chrome.tabs.query(options, (tabs) => {
-		for (let i = tabStart; i < tabs.length; i++) {
+		if (!tabEnd) {
+			tabEnd = tabs.length
+		}
+
+		for (let i = tabStart; i < tabEnd; i++) {
 
 			let buffer = 'ERROR - buffer was never overwritten by tabTitle or tabUrl';
 			let tabTitle = tabs[i].title;
@@ -50,6 +60,9 @@ function formatInput(dataFormat, options, tabStart) {
 					prefix = '!';
 				}
 				buffer = prefix + '[' + tabTitle + '](' + tabUrl + ')';
+			}
+			if (dataFormat == 'base') {
+				buffer = tabTitle + ' - ' + tabUrl;
 			}
 			else if (dataFormat == 'url') {
 				buffer = tabUrl;
