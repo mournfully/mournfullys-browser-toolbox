@@ -11,7 +11,7 @@
   },
   "action": {
     "default_icon": "icons/icon16.png",
-    "default_popup": "popup.html"
+    "default_popup": "ui/popup/popup.html"
   },
   "permissions": [
     "storage",
