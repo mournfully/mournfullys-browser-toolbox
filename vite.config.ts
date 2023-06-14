@@ -1,4 +1,4 @@
-
+// https://crxjs.dev/vite-plugin/getting-started/solid/create-project
 import { defineConfig } from 'vite'
 import solidPlugin from 'vite-plugin-solid'
 import { crx } from '@crxjs/vite-plugin'

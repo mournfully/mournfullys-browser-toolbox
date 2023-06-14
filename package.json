@@ -3,7 +3,7 @@
   "version": "1.2.0",
   "description": "comprehensive tab management",
   "scripts": {
-    "dev": "vite",
+    "dev": "rm -rf dev && vite",
     "build": "vite build",
     "serve": "vite preview"
   },
