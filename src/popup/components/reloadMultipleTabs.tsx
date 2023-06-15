@@ -1,8 +1,6 @@
-import { Component } from 'solid-js'
+// Based off of https://github.com/mohamedmansour/reload-all-tabs-extension
 
-const ReloadMultipleTabs: Component = () => {
-  // https://developer.chrome.com/docs/extensions/reference/tabs/
-  // https://github.com/GoogleChrome/chrome-extensions-samples/blob/main/functional-samples/tutorial.tabs-manager/popup.js
+export function ReloadMultipleTabs() {
   async function reload_tabs() {
     const window: chrome.windows.Window = await chrome.windows.getCurrent()
     const tabs = await chrome.tabs.query({ windowId: window.id })
@@ -17,8 +15,3 @@ const ReloadMultipleTabs: Component = () => {
     </div>
   )
 }
-
-export default ReloadMultipleTabs
-
-
-

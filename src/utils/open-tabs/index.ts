@@ -2,7 +2,7 @@ import { extractURLs } from './extract';
 import { loadSites, URL_LINE_SPLIT_REGEX } from './load';
 import { getStoredOptions, StorageKey, storeValue } from '../common/storage';
 import { getUIDef, UIDef } from '../common/ui';
-import { debounce } from 'ts-debounce';
+import { debounce } from 'lodash';
 
 export const SAVE_URL_LIST_DEBOUNCE_TIME_MS = 100;
 export const UPDATE_TAB_COUNT_DEBOUNCE_TIME_MS = 50;

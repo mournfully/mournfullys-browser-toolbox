@@ -1,4 +1,4 @@
-import browser from 'webextension-polyfill';
+// import chrome from 'webextension-polyfill';
 
 export enum StorageKey {
   urlList = 'txt', // open-tabs input
@@ -15,10 +15,10 @@ export interface StoredOptions {
 }
 
 export async function getStoredOptions(): Promise<StoredOptions> {
-  const txtVal = await browser.storage.local.get(StorageKey.urlList);
-  const tabFormatVal = await browser.storage.local.get(StorageKey.tabFormat);
-  const tabScopeVal = await browser.storage.local.get(StorageKey.tabScope);
-  const urlInputVal = await browser.storage.local.get(StorageKey.urlInput);
+  const txtVal = await chrome.storage.local.get(StorageKey.urlList);
+  const tabFormatVal = await chrome.storage.local.get(StorageKey.tabFormat);
+  const tabScopeVal = await chrome.storage.local.get(StorageKey.tabScope);
+  const urlInputVal = await chrome.storage.local.get(StorageKey.urlInput);
 
   return {
     txt: txtVal?.txt || '',
@@ -29,5 +29,5 @@ export async function getStoredOptions(): Promise<StoredOptions> {
 }
 
 export async function storeValue<T>(key: StorageKey, value: T): Promise<void> {
-  await browser.storage.local.set({ [key]: value });
+  await chrome.storage.local.set({ [key]: value });
 }

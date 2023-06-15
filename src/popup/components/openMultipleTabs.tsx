@@ -1,7 +1,6 @@
-import { Component } from 'solid-js'
 // import { handleInput } from '../../libs/form'
 
-const OpenMultipleTabs: Component = () => {
+export function OpenMultipleTabs() {
   return (
     <div>
       <label for="urls">Open a list of urls / Extract urls from text:</label>
@@ -17,5 +16,3 @@ const OpenMultipleTabs: Component = () => {
     </div>
   )
 }
-
-export default OpenMultipleTabs

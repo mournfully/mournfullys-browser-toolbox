@@ -1,8 +1,8 @@
-// Inspiration: https://github.com/refined-github/refined-github
+// Based off of https://github.com/refined-github/refined-github
 import { handleSaveInput, liveCache } from '../../utils/cache'
 
 export function OpenSingleTab() {
-  function open_single_tab() { 
+  async function open_single_tab() { 
     chrome.tabs.create({ url: liveCache.single_url_input })
   }
   
@@ -22,4 +22,3 @@ export function OpenSingleTab() {
     </div >
   )
 }
-

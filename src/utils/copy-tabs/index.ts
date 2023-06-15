@@ -1,6 +1,6 @@
 import { getUIDef } from '../common/ui';
 import { getStoredOptions, StorageKey, storeValue } from '../common/storage';
-import { debounce } from 'ts-debounce';
+import { debounce } from 'lodash';
 import { copyTabsHandler } from './copy';
 
 export { };
