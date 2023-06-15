@@ -8,10 +8,10 @@
     "esModuleInterop": true,
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
-    "types": ["vite/client"],
+    "types": ["vite/client", "chrome"],
     "noEmit": true,
-    "isolatedModules": true
+    "isolatedModules": true,
   },
   "include": ["src/", "src/*.d.ts"],
-  "exclude": ["node_modules", "dist", "public"]
+  "exclude": ["node_modules", "dist", "public"]  
 }
