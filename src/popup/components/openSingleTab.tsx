@@ -1,3 +1,4 @@
+// Inspiration: https://github.com/refined-github/refined-github
 import { handleSaveInput, liveCache } from '../../utils/cache'
 
 export function OpenSingleTab() {
