@@ -7,7 +7,7 @@
   "homepage_url": "https://github.com/mournfully",
   "action": {
     "default_icon": "src/images/icon16.png",
-    "default_popup": "src/popup/popup.html"
+    "default_popup": "src/popup.html"
   },
   "icons": {
     "16": "src/images/icon16.png",

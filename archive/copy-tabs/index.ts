@@ -1,5 +1,5 @@
-import { getUIDef } from '../common/ui';
-import { getStoredOptions, StorageKey, storeValue } from '../common/storage';
+import { getUIDef } from '../../../archive/common/ui';
+import { getStoredOptions, StorageKey, storeValue } from '../../../archive/common/storage';
 import { debounce } from 'lodash';
 import { copyTabsHandler } from './copy';
 
