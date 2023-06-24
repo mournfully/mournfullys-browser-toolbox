@@ -1,8 +1,9 @@
 // Based off of https://github.com/refined-github/refined-github
+
 import { handleSaveInput, liveCache } from '../../utils/cache'
 
 export function OpenSingleTab() {
-  async function open_single_tab() { 
+  async function openTab() { 
     chrome.tabs.create({ url: liveCache.single_url_input })
   }
   
@@ -17,7 +18,7 @@ export function OpenSingleTab() {
       <button
         tabindex="6"
         class="flex ml-1"
-        onClick={() => open_single_tab()}> Open URL
+        onClick={() => openTab()}> Open URL
       </button>
     </div >
   )

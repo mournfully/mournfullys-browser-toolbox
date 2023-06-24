@@ -14,13 +14,12 @@ export const [liveCache, setLiveCache] = createStore<LiveCacheFields>({
 	single_url_input: "",
 })
 
-export const handleSaveInput = (event: EventType) => {
-	const {id, value} = event.currentTarget
-	setDebouncedLiveCache(liveCache, id, value)
-}
-
 const setDebouncedLiveCache = debounce((liveCache, id, value: string) => {
 	setLiveCache(id as keyof LiveCacheFields, value)
 	console.log(JSON.stringify(liveCache))
 }, 250)
 
+export const handleSaveInput = (event: EventType) => {
+	const {id, value} = event.currentTarget
+	setDebouncedLiveCache(liveCache, id, value)
+}
