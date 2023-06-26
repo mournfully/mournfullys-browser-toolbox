@@ -30,11 +30,13 @@ const setDebouncedLiveCache = debounce((id, value) => {
 
 export async function getAllValues() {
 	const singleLinkInput = await chrome.storage.local.get(StorageKey.singleLinkInput)
+	const bulkLinkInput = await chrome.storage.local.get(StorageKey.bulkLinkInput)
 	const bulkTabScope = await chrome.storage.local.get(StorageKey.bulkTabScope)
   const bulkCopyTabFormat = await chrome.storage.local.get(StorageKey.bulkCopyTabFormat)
 	return {
 		// spread operator (...) for merging multiple objects
 		...singleLinkInput,
+		...bulkLinkInput,
 		...bulkTabScope,
 		...bulkCopyTabFormat
 	}

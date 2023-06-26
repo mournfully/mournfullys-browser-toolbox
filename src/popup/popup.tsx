@@ -4,7 +4,7 @@ import { createStore } from 'solid-js/store'
 import './style.css'
 
 import { handleTextInput, handleRadioInput, getAllValues } from '../utils/cache'
-import { openSingleLink, reloadMultipleTabs, copyMultipleTabs } from '../utils/core'
+import { openSingleLink, reloadMultipleTabs, copyMultipleTabs, a } from '../utils/core'
 import { RadioButton } from './components/RadioButton'
 
 const app_container = document.querySelector("#app-container")
@@ -14,6 +14,7 @@ if (!app_container) {
 
 function Main() {
   const [singleLinkInput, setSingleLinkInput] = createSignal('')
+  const [bulkLinkInput, setBulkLinkInput] = createSignal('')
   // https://hackernoon.com/state-management-in-solidjs-applications
   const [bulkTabStore, setBulkTabStore] = createStore({
     scope: [
@@ -33,9 +34,13 @@ function Main() {
   // restore stored values
   onMount(async () => {
     const StoredValues = await getAllValues()
+    console.log(StoredValues)
 
     const singleLinkInput = StoredValues.singleLinkInput
     if (singleLinkInput) setSingleLinkInput(singleLinkInput)
+
+    const bulkLinkInput = StoredValues.bulkLinkInput
+    if (bulkLinkInput) setBulkLinkInput(bulkLinkInput)
 
     const bulkTabScope = StoredValues.bulkTabScope.id
     if (bulkTabScope) setBulkTabStore('scope', bulkTabScope, 'checked', true)
@@ -59,8 +64,12 @@ function Main() {
         </button>
       </div>
       <div>
-        <textarea id="urls" wrap="soft" onChange={(e) => console.log(e)} class="bg-zinc-800 h-64 w-96 resize-none overflow-auto whitespace-pre"></textarea>
-        <button id="extract" onClick={(e) => console.log(e)}>Extract URLs</button>
+        <textarea 
+          onInput={(e) => handleTextInput(e)} 
+          id="bulkLinkInput" wrap="soft" value={bulkLinkInput()} 
+          class="bg-zinc-800 h-64 w-96 resize-none overflow-auto whitespace-pre">
+        </textarea>
+        <button id="extract" onClick={() => a()}>Extract URLs</button>
         <button id="open" onClick={(e) => console.log(e)}>Open Tabs</button>
       </div>
       <div>
