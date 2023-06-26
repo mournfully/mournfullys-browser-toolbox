@@ -22,12 +22,9 @@ export function handleRadioInput(event) {
 	const {name, value, id} = event.target
 	if (name == 'scope') setDebouncedLiveCache('bulkTabScope', {id: id, value: value})
 	if (name == 'format') setDebouncedLiveCache('bulkCopyTabFormat', {id: id, value: value})
-	// if (name == 'scope') setDebouncedLiveCache('bulkTabScope', value)
-	// if (name == 'format') setDebouncedLiveCache('bulkCopyTabFormat', value)
 }
 
 const setDebouncedLiveCache = debounce((id, value) => {
-	// console.log(`${id}: ${JSON.stringify(value)}`)
 	chrome.storage.local.set({ [id]: value })
 }, 100)
 
@@ -41,4 +38,8 @@ export async function getAllValues() {
 		...bulkTabScope,
 		...bulkCopyTabFormat
 	}
+}
+
+export async function getSingleValue(key: keyof typeof StorageKey) {
+	return await chrome.storage.local.get(key)
 }

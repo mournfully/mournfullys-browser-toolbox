@@ -1,9 +1,9 @@
 import { render } from 'solid-js/web'
-import './style.css'
-import { handleTextInput, handleRadioInput, getAllValues } from '../utils/cache'
 import { createSignal, onMount } from 'solid-js'
 import { createStore } from 'solid-js/store'
+import './style.css'
 
+import { handleTextInput, handleRadioInput, getAllValues } from '../utils/cache'
 import { openSingleLink, reloadMultipleTabs, copyMultipleTabs } from '../utils/core'
 import { RadioButton } from './components/RadioButton'
 
@@ -45,7 +45,7 @@ function Main() {
   })
 
   return (
-    <div id="app-container" class="bg-zinc-900 h-[480px] w-96 text-xs text-white font-sans">
+    <div class="bg-zinc-900 h-[480px] w-96 text-xs text-white font-sans">
       <div class="flex w-full justify-between">
         <input
           onInput={(e) => handleTextInput(e)}
@@ -65,50 +65,16 @@ function Main() {
       </div>
       <div>
         <form onChange={(e) => handleRadioInput(e)}>
-          <RadioButton 
-            id="0"
-            value="single" 
-            checked={bulkTabStore.scope[0].checked}
-            name="scope" />
-          <RadioButton 
-            id="1"
-            value="all" 
-            checked={bulkTabStore.scope[1].checked}
-            name="scope" />
-          <RadioButton 
-            id="2"
-            value="leftward" 
-            checked={bulkTabStore.scope[2].checked}
-            name="scope" />
-          <RadioButton 
-            id="3"
-            value="rightward" 
-            checked={bulkTabStore.scope[3].checked}
-            name="scope" />
+          <RadioButton id="0" name="scope" value="single" checked={bulkTabStore.scope[0].checked} />
+          <RadioButton id="1" name="scope" value="all" checked={bulkTabStore.scope[1].checked} />
+          <RadioButton id="2" name="scope" value="leftward" checked={bulkTabStore.scope[2].checked} />
+          <RadioButton id="3" name="scope" value="rightward" checked={bulkTabStore.scope[3].checked} />
         </form>
         <form onChange={(e) => handleRadioInput(e)}>
-          <RadioButton 
-            id="0"
-            value="markdown" 
-            text="[title](url)" 
-            checked={bulkTabStore.format[0].checked}
-            name="format" />
-          <RadioButton 
-            id="1"
-            value="base" 
-            text="title - url" 
-            checked={bulkTabStore.format[1].checked}
-            name="format" />
-          <RadioButton 
-            id="2"
-            value="url" 
-            checked={bulkTabStore.format[2].checked}
-            name="format" />
-          <RadioButton 
-            id="3"
-            value="title" 
-            checked={bulkTabStore.format[3].checked}
-            name="format" />
+          <RadioButton id="0" name="format" value="markdown" text="[title](url)" checked={bulkTabStore.format[0].checked} />
+          <RadioButton id="1" name="format" value="base" text="title - url" checked={bulkTabStore.format[1].checked} />
+          <RadioButton id="2" name="format" value="url" checked={bulkTabStore.format[2].checked} />
+          <RadioButton id="3" name="format" value="title" checked={bulkTabStore.format[3].checked} />
           <br />
         </form>
         <button onClick={() => copyMultipleTabs()}>Copy Tabs</button>
