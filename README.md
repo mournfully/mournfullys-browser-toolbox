@@ -1,9 +1,9 @@
 # mournfullys-chromium-toolbox
 
 <p float="center">
-    <img src="./.github/empty.png" width="45%"/>
+    <img src="./docs/empty.png" width="45%"/>
     &nbsp; &nbsp; &nbsp; &nbsp;
-    <img src="./.github/filled.png" width="45%"/>
+    <img src="./docs/filled.png" width="45%"/>
 </p>
 
 ### build from source
