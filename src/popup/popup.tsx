@@ -4,7 +4,7 @@ import { createStore } from 'solid-js/store'
 import './style.css'
 
 import { handleTextInput, handleRadioInput, getAllValues } from '../utils/cache'
-import { openSingleLink, reloadMultipleTabs, copyMultipleTabs, a } from '../utils/core'
+import { openSingleLink, extractMultipleLinks, openMultipleTabs, copyMultipleTabs, reloadMultipleTabs } from '../utils/core'
 import { RadioButton } from './components/RadioButton'
 
 const app_container = document.querySelector("#app-container")
@@ -34,7 +34,7 @@ function Main() {
   // restore stored values
   onMount(async () => {
     const StoredValues = await getAllValues()
-    console.log(StoredValues)
+    // console.log(StoredValues)
 
     const singleLinkInput = StoredValues.singleLinkInput
     if (singleLinkInput) setSingleLinkInput(singleLinkInput)
@@ -51,6 +51,7 @@ function Main() {
 
   return (
     <div class="bg-zinc-900 h-[480px] w-96 text-xs text-white font-sans">
+      
       <div class="flex w-full justify-between">
         <input
           onInput={(e) => handleTextInput(e)}
@@ -63,15 +64,17 @@ function Main() {
           onClick={() => openSingleLink()}> Open URL
         </button>
       </div>
+      
       <div>
         <textarea 
           onInput={(e) => handleTextInput(e)} 
           id="bulkLinkInput" wrap="soft" value={bulkLinkInput()} 
           class="bg-zinc-800 h-64 w-96 resize-none overflow-auto whitespace-pre">
         </textarea>
-        <button id="extract" onClick={() => a()}>Extract URLs</button>
-        <button id="open" onClick={(e) => console.log(e)}>Open Tabs</button>
+        <button id="extract" onClick={() => extractMultipleLinks(setBulkLinkInput)}>Extract URLs</button>
+        <button id="open" onClick={() => openMultipleTabs()}>Open Tabs</button>
       </div>
+      
       <div>
         <form onChange={(e) => handleRadioInput(e)}>
           <RadioButton id="0" name="scope" value="single" checked={bulkTabStore.scope[0].checked} />
@@ -88,9 +91,11 @@ function Main() {
         </form>
         <button onClick={() => copyMultipleTabs()}>Copy Tabs</button>
       </div>
+      
       <div>
         <button onClick={() => reloadMultipleTabs()}>Reload Tabs</button>
       </div>
+
     </div>
   )
 }
