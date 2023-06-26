@@ -1,6 +1,6 @@
 {
   "name": "Mournfully's Extension",
-  "version": "1.4",
+  "version": "1.5.0",
   "manifest_version": 3,
   "description": "An amalgamation of a couple distinct chrome extensions under one unified interface",
   "permissions": ["storage", "tabs", "clipboardWrite"],
