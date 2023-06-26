@@ -16,6 +16,11 @@ export async function reloadMultipleTabs() {
   }
 }
 
+// Based off of https://github.com/htrinter/Open-Multiple-URLs
+export async function a() {
+
+}
+
 // Based off of https://github.com/kiichi/QuickCopyTitleAndURL
 export async function copyMultipleTabs() {
   const bulkTabScope = (await getSingleValue('bulkTabScope')).bulkTabScope.value
