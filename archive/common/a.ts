@@ -16,7 +16,6 @@
 //   console.log(e)
 // }
 
-// Based off of https://github.com/kiichi/QuickCopyTitleAndURL
 // Based off of https://github.com/htrinter/Open-Multiple-URLs
 // import { handleSaveInput, liveCache } from '../../utils/cache'
 
