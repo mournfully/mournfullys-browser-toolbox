@@ -28,7 +28,7 @@ function Main() {
       { id: 3, name: 'title', checked: false },
     ]
   })
-  
+ 
   // restore stored values
   onMount(async () => {
     const StoredValues = await getAllValues()
@@ -71,10 +71,7 @@ function Main() {
           <button onClick={() => reloadMultipleTabs()}>Reload Tabs</button>
         </div>
 
-        <form onChange={(e) => handleRadioInput(e)} onSubmit={(e) => {
-          console.log(bulkTabStore)
-          copyMultipleTabs(e)
-        }}>
+        <form onChange={(e) => handleRadioInput(e)}>
           <RadioButton 
             id="0"
             value="single" 
@@ -95,7 +92,8 @@ function Main() {
             value="rightward" 
             checked={bulkTabStore.scope[3].checked}
             name="scope" />
-          <br />
+          </form>
+          <form onChange={(e) => handleRadioInput(e)}>
           <RadioButton 
             id="0"
             value="markdown" 
@@ -119,7 +117,7 @@ function Main() {
             checked={bulkTabStore.format[3].checked}
             name="format" />
           <br />
-          <button type="submit">Copy Tabs</button>
+          <button onClick={(e) => copyMultipleTabs(e)}>Copy Tabs</button>
         </form>
       </div>
 
