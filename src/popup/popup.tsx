@@ -72,6 +72,7 @@ function Main() {
           class="bg-zinc-800 h-64 w-96 resize-none overflow-auto whitespace-pre">
         </textarea>
         <button id="extract" onClick={() => extractMultipleLinks(setBulkLinkInput)}>Extract URLs</button>
+        <br />
         <button id="open" onClick={() => openMultipleTabs()}>Open Tabs</button>
       </div>
       
