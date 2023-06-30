@@ -80,7 +80,7 @@ export async function copyMultipleTabs() {
   chrome.tabs.query(options, (tabs) => {
     // fallback to default index end
     if (!indexEnd) indexEnd = tabs.length
-    let previousGroupId = -1
+    let previousGroupId
 
     for (let i = indexStart; i < indexEnd; i++) {
       let title = tabs[i].title!
@@ -109,9 +109,13 @@ export async function copyMultipleTabs() {
       }
       
       if (true) { // toggle \n between tab groups        
-          if (tabs.length > 1) {
-            let groupId = tabs[i].groupId
-            if (groupId != previousGroupId) {
+        if (tabs.length > 1) {
+          if (i == 0) {
+            previousGroupId = tabs[i].groupId
+          }
+
+          let groupId = tabs[i].groupId
+          if (groupId != previousGroupId) {
             lines += `\n`
             previousGroupId = groupId
           }
