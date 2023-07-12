@@ -4,13 +4,15 @@ export enum StorageKey {
 	singleLinkInput = 'singleLinkInput',
 	bulkLinkInput = 'bulkLinkInput',
 	bulkTabScope = 'bulkTabScope',
-	bulkCopyTabFormat = 'bulkCopyTabFormat'
+	bulkCopyTabFormat = 'bulkCopyTabFormat',
+	bulkOutputSpacing = 'bulkOutputSpacing',
 }
 export interface StoredValues {
 	singleLinkInput?: string
 	bulkLinkInput?: string
 	bulkTabScope?: string
 	bulkCopyTabFormat?: string
+	bulkOutputSpacing?: string
 }
 
 export function handleTextInput(event) {
@@ -22,6 +24,7 @@ export function handleRadioInput(event) {
 	const {name, value, id} = event.target
 	if (name == 'scope') setDebouncedLiveCache('bulkTabScope', {id: id, value: value})
 	if (name == 'format') setDebouncedLiveCache('bulkCopyTabFormat', {id: id, value: value})
+	if (name == 'spacing') setDebouncedLiveCache('bulkOutputSpacing', {id: id, value: value})
 }
 
 const setDebouncedLiveCache = debounce((id, value) => {
@@ -33,12 +36,14 @@ export async function getAllValues() {
 	const bulkLinkInput = await chrome.storage.local.get(StorageKey.bulkLinkInput)
 	const bulkTabScope = await chrome.storage.local.get(StorageKey.bulkTabScope)
   const bulkCopyTabFormat = await chrome.storage.local.get(StorageKey.bulkCopyTabFormat)
+	const bulkOutputSpacing = await chrome.storage.local.get(StorageKey.bulkOutputSpacing)
 	return {
 		// spread operator (...) for merging multiple objects
 		...singleLinkInput,
 		...bulkLinkInput,
 		...bulkTabScope,
-		...bulkCopyTabFormat
+		...bulkCopyTabFormat,
+		...bulkOutputSpacing,
 	}
 }
 

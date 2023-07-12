@@ -28,6 +28,10 @@ function Main() {
       { id: 1, name: 'base', checked: false },
       { id: 2, name: 'url', checked: false },
       { id: 3, name: 'title', checked: false },
+    ],
+    spacing: [
+      { id: 0, name: 'seperateTabGroup', checked: false },
+      { id: 1, name: 'extraNewLine', checked: false},
     ]
   })
 
@@ -47,6 +51,9 @@ function Main() {
 
     const bulkCopyTabFormat = StoredValues.bulkCopyTabFormat.id
     if (bulkCopyTabFormat) setBulkTabStore('format', bulkCopyTabFormat, 'checked', true)
+
+    const bulkOutputSpacing = StoredValues.bulkOutputSpacing.id
+    if (bulkOutputSpacing) setBulkTabStore('spacing', bulkOutputSpacing, 'checked', true)
   })
 
   return (
@@ -89,6 +96,10 @@ function Main() {
           <RadioButton id="2" name="format" value="url" checked={bulkTabStore.format[2].checked} />
           <RadioButton id="3" name="format" value="title" checked={bulkTabStore.format[3].checked} />
           <br />
+        </form>
+        <form onChange={(e) => handleRadioInput(e)}>
+          <RadioButton id="0" name="spacing" value="seperateTabGroup" checked={bulkTabStore.spacing[0].checked}/>
+          <RadioButton id="1" name="spacing" value="extraNewLine" checked={bulkTabStore.spacing[1].checked}/>
         </form>
         <button onClick={() => copyMultipleTabs()}>Copy Tabs</button>
       </div>

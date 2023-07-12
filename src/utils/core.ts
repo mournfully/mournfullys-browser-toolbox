@@ -55,6 +55,8 @@ export async function openMultipleTabs() {
 export async function copyMultipleTabs() {
   const bulkTabScope = (await getSingleValue('bulkTabScope')).bulkTabScope.value
   const bulkCopyTabFormat = (await getSingleValue('bulkCopyTabFormat')).bulkCopyTabFormat.value
+  const bulkOutputSpacing = (await getSingleValue('bulkOutputSpacing')).bulkOutputSpacing.value
+  console.log(bulkOutputSpacing)
   
 	let options = {}
   let indexStart = 0
@@ -123,7 +125,11 @@ export async function copyMultipleTabs() {
       }
       
       lines += line
-      if (tabs.length > 1) lines += `\n`
+      if (tabs.length > 1) {
+        lines += `\n`
+        if (true) lines += `\n` // toggle extra \n between tabs        
+      }
+
     }
 
     ClipboardJS.copy(lines)
