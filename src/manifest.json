@@ -3,15 +3,19 @@
   "version": "1.5.0",
   "manifest_version": 3,
   "description": "An amalgamation of a couple distinct chrome extensions under one unified interface",
-  "permissions": ["storage", "tabs", "clipboardWrite"],
+  "permissions": ["storage", "tabs", "clipboardWrite", "contextMenus"],
   "homepage_url": "https://github.com/mournfully",
   "action": {
-    "default_icon": "src/images/icon16.png",
-    "default_popup": "src/popup/popup.html"
+    "default_icon": "images/icon16.png",
+    "default_popup": "popup/popup.html"
   },
   "icons": {
-    "16": "src/images/icon16.png",
-    "48": "src/images/icon48.png",
-    "128": "src/images/icon128.png"
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "background": {
+    "service_worker": "background.ts",
+    "types": "module"
   }
 }
