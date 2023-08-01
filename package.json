@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "rm -rf dev && vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "lint": "eslint src/",
+		"lint:fix": "npm run lint -- --fix"
   },
   "keywords": [],
   "author": "mournfully",
@@ -14,6 +16,9 @@
   "devDependencies": {
     "@crxjs/vite-plugin": "^2.0.0-beta.17",
     "@types/chrome": "^0.0.238",
+    "@typescript-eslint/eslint-plugin": "5.29.0",
+    "@typescript-eslint/parser": "5.29.0",
+    "@types/node": "^20.4.2",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.24",
     "sass": "^1.63.6",
