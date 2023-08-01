@@ -3,16 +3,16 @@
 // https://www.solidjs.com/tutorial/props_defaults
 
 export function RadioButton(props) {
-  return (
-    <label>
-      <input
-        type="radio"
-        name={props.name}
-        id={props.id}
-        value={props.value} 
-        checked={props.checked}
-      />
-      {props.text ? props.text : props.value}
-    </label>
-  )
+	return (
+		<label>
+			<input
+				type="radio"
+				name={props.name}
+				id={props.id}
+				value={props.value} 
+				checked={props.checked}
+			/>
+			{props.text ? props.text : props.value}
+		</label>
+	)
 }

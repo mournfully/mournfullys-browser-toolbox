@@ -35,7 +35,7 @@ export async function getAllValues() {
 	const singleLinkInput = await chrome.storage.local.get(StorageKey.singleLinkInput)
 	const bulkLinkInput = await chrome.storage.local.get(StorageKey.bulkLinkInput)
 	const bulkTabScope = await chrome.storage.local.get(StorageKey.bulkTabScope)
-  const bulkCopyTabFormat = await chrome.storage.local.get(StorageKey.bulkCopyTabFormat)
+	const bulkCopyTabFormat = await chrome.storage.local.get(StorageKey.bulkCopyTabFormat)
 	const bulkOutputSpacing = await chrome.storage.local.get(StorageKey.bulkOutputSpacing)
 	return {
 		// spread operator (...) for merging multiple objects
