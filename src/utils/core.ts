@@ -56,7 +56,6 @@ export async function copyMultipleTabs() {
 	const bulkTabScope = (await getSingleValue('bulkTabScope')).bulkTabScope.value
 	const bulkCopyTabFormat = (await getSingleValue('bulkCopyTabFormat')).bulkCopyTabFormat.value
 	const bulkOutputSpacing = (await getSingleValue('bulkOutputSpacing')).bulkOutputSpacing.value
-	console.log(bulkOutputSpacing)
   
 	const options = {}
 	let indexStart = 0
@@ -87,7 +86,9 @@ export async function copyMultipleTabs() {
 		for (let i = indexStart; i < indexEnd; i++) {
 			let title = tabs[i].title!
 			const url = tabs[i].url!
+			let embed = ''
 			let line = ''
+			console.log(title)
 
 			// remove leading notification counts - https://youtu.be/bV0QNuhN9fU?t=64
 			const LEADING_NOTIFICATION_COUNT = title.match(/^(\([0-9]+\) )?(.*)$/)
@@ -95,9 +96,12 @@ export async function copyMultipleTabs() {
 
 			switch (bulkCopyTabFormat) {
 			case 'markdown':
-				let embed = ''
 				if (isImage(url)) embed = '!'
 				line = `${embed}[${title}](${url})`
+				break
+			case 'markdownV2':
+				if (isImage(url)) embed = '!'
+				line = `${embed}[${title}](${url} "${title}")`
 				break
 			case 'base':
 				line = `${title} - ${url}`
@@ -110,7 +114,7 @@ export async function copyMultipleTabs() {
 				break
 			}
       
-			if (true) { // toggle \n between tab groups        
+			if (bulkOutputSpacing == 'seperateTabGroup') { // toggle \n between tab groups        
 				if (tabs.length > 1) {
 					if (i == 0) {
 						previousGroupId = tabs[i].groupId
@@ -127,9 +131,10 @@ export async function copyMultipleTabs() {
 			lines += line
 			if (tabs.length > 1) {
 				lines += '\n'
-				if (false) lines += '\n' // toggle extra \n between tabs        
+				if (bulkOutputSpacing == 'seperateTab') {
+					lines += '\n' // toggle extra \n between tabs        
+				} 
 			}
-
 		}
 
 		ClipboardJS.copy(lines)

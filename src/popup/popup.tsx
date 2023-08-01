@@ -25,13 +25,15 @@ function Main() {
 		],
 		format: [
 			{ id: 0, name: 'markdown', checked: false },
-			{ id: 1, name: 'base', checked: false },
-			{ id: 2, name: 'url', checked: false },
-			{ id: 3, name: 'title', checked: false },
+			{ id: 1, name: 'markdownV2', checked: false },
+			{ id: 2, name: 'base', checked: false },
+			{ id: 3, name: 'url', checked: false },
+			{ id: 4, name: 'title', checked: false },
 		],
 		spacing: [
-			{ id: 0, name: 'seperateTabGroup', checked: false },
-			{ id: 1, name: 'extraNewLine', checked: false},
+			{ id: 0, name: 'seperateNone', checked: false },
+			{ id: 1, name: 'seperateTabGroup', checked: false },
+			{ id: 2, name: 'seperateTab', checked: false},
 		]
 	})
 
@@ -92,14 +94,16 @@ function Main() {
 				</form>
 				<form onChange={(e) => handleRadioInput(e)}>
 					<RadioButton id="0" name="format" value="markdown" text="[title](url)" checked={bulkTabStore.format[0].checked} />
-					<RadioButton id="1" name="format" value="base" text="title - url" checked={bulkTabStore.format[1].checked} />
-					<RadioButton id="2" name="format" value="url" checked={bulkTabStore.format[2].checked} />
-					<RadioButton id="3" name="format" value="title" checked={bulkTabStore.format[3].checked} />
+					<RadioButton id="1" name="format" value="markdownV2" text='[title](url "title")' checked={bulkTabStore.format[1].checked} />
+					<RadioButton id="2" name="format" value="base" text="title - url" checked={bulkTabStore.format[2].checked} />
+					<RadioButton id="3" name="format" value="url" checked={bulkTabStore.format[3].checked} />
+					<RadioButton id="4" name="format" value="title" checked={bulkTabStore.format[4].checked} />
 					<br />
 				</form>
 				<form onChange={(e) => handleRadioInput(e)}>
-					<RadioButton id="0" name="spacing" value="seperateTabGroup" checked={bulkTabStore.spacing[0].checked}/>
-					<RadioButton id="1" name="spacing" value="extraNewLine" checked={bulkTabStore.spacing[1].checked}/>
+					<RadioButton id="0" name="spacing" value="seperateNone" checked={bulkTabStore.spacing[0].checked}/>
+					<RadioButton id="1" name="spacing" value="seperateTabGroup" checked={bulkTabStore.spacing[1].checked}/>
+					<RadioButton id="2" name="spacing" value="seperateTab" checked={bulkTabStore.spacing[2].checked}/>
 				</form>
 				<button onClick={() => copyMultipleTabs()}>Copy Tabs</button>
 			</div>
