@@ -1,9 +1,7 @@
 # mournfullys-browser-toolbox
 
 <p float="center">
-    <img src="./docs/legacy.png" width="45%"/>
-    &nbsp; &nbsp; &nbsp; &nbsp;
-    <img src="./docs/current.png" width="45%"/>
+    <img src="./docs/popup.png" width="45%"/>
 </p>
 
 ### build from source
