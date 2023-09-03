@@ -5,7 +5,8 @@ import './style.css'
 
 import { RadioButton } from './components/RadioButton'
 import { handleTextInput, handleRadioInput, getAllValues } from '../utils/cache'
-import { openSingleLink, extractMultipleLinks, openMultipleTabs, copyMultipleTabs, reloadMultipleTabs } from '../utils/core'
+import { openSingleLink, extractMultipleLinks, openMultipleTabs, reloadMultipleTabs } from '../utils/core'
+import { copyMultipleTabs } from '../utils/copy-tabs'
 
 const app_container = document.querySelector('#app-container')
 if (!app_container) {
