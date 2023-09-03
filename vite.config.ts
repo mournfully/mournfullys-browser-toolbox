@@ -1,6 +1,5 @@
 // https://crxjs.dev/vite-plugin/getting-started/solid/create-project
 import path from 'path'
-import { glob } from 'glob'
 import { defineConfig } from 'vite'
 import { crx } from '@crxjs/vite-plugin'
 import solidPlugin from 'vite-plugin-solid'
