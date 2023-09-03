@@ -17,5 +17,11 @@
   "background": {
     "service_worker": "background.ts",
     "types": "module"
-  }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [ "lazyload.html", "lazyload.ts" ],
+      "use_dynamic_url": true
+    }
+  ]
 }
