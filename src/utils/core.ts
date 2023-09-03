@@ -35,7 +35,7 @@ export async function extractMultipleLinks(setBulkLinkInput: Setter<string>) {
 	}
 }
 
-export async function openMultipleTabs() {
+export async function openMultipleTabs(lazyload: boolean) {
 	const URL_LINE_SPLIT_REGEX = /\r\n?|\n/g
 	const URL_SCHEMES = ['http', 'https', 'file', 'view-source']
 
@@ -46,7 +46,11 @@ export async function openMultipleTabs() {
 		url = url.trim()
 		if (url === '') continue
 		if (URL_SCHEMES.indexOf(url.split(':')[0]) === -1) url = 'http://' + url
-		chrome.tabs.create({url: url, active: false})
+		if (lazyload && url.split(':')[0] !== 'view-source' && url.split(':')[0] !== 'file') {
+			chrome.tabs.create({url: chrome.runtime.getURL('lazyload.html#') + url, active: false})
+		} else {
+			chrome.tabs.create({url: url, active: false})
+		}
 	}
 }
 

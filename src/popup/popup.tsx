@@ -83,7 +83,9 @@ function Main() {
 				</textarea>
 				<button id="extract" onClick={() => extractMultipleLinks(setBulkLinkInput)}>Extract URLs</button>
 				<br />
-				<button id="open" onClick={() => openMultipleTabs()}>Open Tabs</button>
+				<button id="open" onClick={() => openMultipleTabs(false)}>Open Tabs</button>
+				<br />
+				<button id="lazyload" onClick={() => openMultipleTabs(true)}>Lazyload Tabs</button>
 			</div>
       
 			<div>
